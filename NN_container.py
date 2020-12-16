@@ -24,7 +24,7 @@ class KNNResultSet:
     def __str__(self):
         output = ''
         for i, dist_index in enumerate(self.worst_dis_list):
-            output += '%d - %.2f\n' % (dist_index.index, dist_index.distance)
+            output += 'index : %d --- distance : %.2f\n' % (dist_index.index, dist_index.distance)
         return output
 
     def worst_distance(self):
@@ -52,6 +52,15 @@ class RadiusNNResultSet:
         self.count = 0
         self.radius = radius
         self.worst_dis_list = []
+
+    def __str__(self):
+        self.worst_dis_list.sort()
+        output = ''
+        for i, dist_index in enumerate(self.worst_dis_list):
+            output += 'index : %d --- distance : %.2f\n' % (dist_index.index, dist_index.distance)
+        output += 'In total %d neighbors within %f.\n' \
+                  % (self.count, self.radius)
+        return output
 
     def worst_radius(self):
         return self.radius
