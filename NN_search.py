@@ -1,5 +1,5 @@
 import numpy as np
-from tree_node import Node
+from BST_tree_node import Node
 from NN_container import KNNResultSet, RadiusNNResultSet
 import math
 
