@@ -2,7 +2,7 @@ import numpy as np
 import time
 from NN_container import KNNResultSet, RadiusNNResultSet
 from NN_search import knn_search, radius_search
-from tree_node import Node
+from BST_tree_node import Node
 
 
 time_start = time.time()
@@ -111,7 +111,7 @@ def postorder(root):
 '''NN search'''
 # KNN
 k = 5
-query_key = 3
+query_key = 20
 result_set_knn = KNNResultSet(5)
 knn_search(root, result_set_knn, query_key)
 print(result_set_knn)
